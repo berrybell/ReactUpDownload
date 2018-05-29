@@ -1,0 +1,19 @@
+{
+  "name": "updownload",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "client": "cd client && yarn start",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "express": "^4.16.2",
+    "multer": "^0.1.6"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "formidable": "^1.2.1"
+  }
+}
