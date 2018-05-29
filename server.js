@@ -22,10 +22,9 @@ app.post('/upload', upload, function(req, res){
 });
 
 //Download route
-app.get('/download', function(req, res){
+app.get('/download', (req, res) => {
   const filesArray = fs.readdirSync(__dirname + '/uploads/');
-
   var file = './uploads/' + filesArray[0];
   res.download(file); // Set disposition and send it
-  fs.unlink(file); //As a workaround, file will be removed after downloading
+  //fs.unlink(file); //As a workaround, file will be removed after downloading
 });

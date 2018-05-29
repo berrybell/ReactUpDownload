@@ -2,4 +2,10 @@
 
 Uploading and downloading files to a local server.
 
-Run `npm install` to download dependencies and `yarn dev` to run the app.
+Run `yarn dev` to run the app and watch for changes.
+```
+npm i nodemon -g && yarn
+cd client && yarn
+cd ..
+yarn dev
+```

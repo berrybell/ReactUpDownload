@@ -34,7 +34,13 @@ class App extends Component {
   uploadHandler = () => { 
     const formData = new FormData();
     formData.append('myFile', this.state.selectedFile, this.state.selectedFile.name);
-    axios.post('/upload', formData).then(alert('File uploaded'));
+    axios.post('/upload', formData)
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((error) => {
+      console.warn(error);
+    });;
   }
 
   downloadHandler = () => {
