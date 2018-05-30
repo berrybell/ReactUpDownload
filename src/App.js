@@ -7,7 +7,8 @@ class App extends Component {
     super()
     this.state = { 
       selectedFile: null, 
-      response: '' 
+      response: '',
+      fileStatus: ''
     }
   }
 
@@ -37,6 +38,7 @@ class App extends Component {
     axios.post('/upload', formData)
     .then((res) => {
       console.log(res);
+      this.setState({fileStatus: 'File uploaded'});
     })
     .catch((error) => {
       console.warn(error);
@@ -58,6 +60,7 @@ class App extends Component {
       link.href = url;
       link.setAttribute('download', fileName.toString());
       link.click();
+      this.setState({fileStatus: 'File downloaded'});
     });
   }
 
@@ -69,11 +72,12 @@ class App extends Component {
         </header>
         <div className="App-body">
           <p>{this.state.response}</p>
-          <form method='post' action='/upload'>   
+          <form>   
             <input type='file' onChange={this.fileChangedHandler} />
             <input type='button' onClick={this.uploadHandler} value='Submit'/>
             <input type='button' onClick={this.downloadHandler} value='Retrieve'/>
           </form>
+        <p>{this.state.fileStatus}</p>
         </div>
       </div>
     );
