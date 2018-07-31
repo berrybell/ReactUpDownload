@@ -1,6 +1,6 @@
 # React Upload and Download
 
-Uploading and downloading files to a local server.
+A proof-of-concept React component uploading and downloading files to a local server.
 
 ## Setup
 Clone to your computer, `cd` into folder and `yarn`.
